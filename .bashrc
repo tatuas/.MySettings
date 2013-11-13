@@ -1,3 +1,8 @@
+# home path
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH=${PATH}:"$HOME/bin":"$HOME/lib":
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -16,8 +21,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -63,6 +68,8 @@ else
 fi
 unset color_prompt force_color_prompt
 
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -85,7 +92,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alFh'
+alias ll='ls -alhF --color=auto'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -113,56 +120,32 @@ if ! shopt -oq posix; then
   fi
 fi
 
-##########################################################################
-# my command
-export PATH=${PATH}:"$HOME/.lib/";
+# about pip init
+# WORKON_HOME=~/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
+# export PIP RESPECT_VIRTUALENV=true
 
-# dropbox
-alias dropbox="python $HOME/.lib/dropbox.py"
+# android-sdk path 
+export PATH=${PATH}:"/usr/local/lib/android-sdk-macosx/platform-tools"
+export PATH=${PATH}:"/usr/local/lib/android-sdk-macosx/tools"
 
+# apktool path
+# export PATH=${PATH}:"$HOME/lib/apktool"
 # xclip alias
 # how to use it 
 # ex) $ clip-c < ~/.ssh/id_rsa.pub
 # ex) echo 'test' | clip-c
-alias clip-c='xclip -i -selection clipboard'
-alias clip-p='xclip -o -selection clipboard'
+# ex) cat test.txt | clip-c
+# alias clip-c='xclip -i -selection clipboard'
+# alias clip-p='xclip -o -selection clipboard'
 
 # add bash`s path to sudo 
 alias sudo="sudo env PATH=$PATH"
 
 # add ${gitcomp_filename}
-# . /usr/local/lib/git/${gitcomp_filename}
-gitcomp_filename="git-completion.bash"
-
-if [ -f ~/.lib/${gitcomp_filename} ]; then
-    if [ -x ~/.lib/${gitcomp_filename} ]; then
-        . ${gitcomp_filename}
-    else 
-        chmod +x ~/.lib/${gitcomp_filename}
-        . ${gitcomp_filename} 
-    fi
-else
-    wget 'http://git.kernel.org/?p=git/git.git;a=blob_plain;f=contrib/completion/git-completion.bash;hb=HEAD' -O ~/.lib/${gitcomp_filename}    
-    chmod +x ~/.lib/${gitcomp_filename}
-    . ${gitcomp_filename}
-fi
-
-# Attache tmux
-if ( ! test $TMUX ) && ( ! expr $TERM : "^screen" > /dev/null ) && which tmux > /dev/null; then
-    if ( tmux has-session ); then
-         session=`tmux list-sessions | grep -e '^[0-9].*]$' | head -n 1 | sed -e 's/^\([0-9]\+\).*$/\1/'`
-         if [ -n "$session" ]; then
-              echo "Attache tmux session $session."
-              tmux attach-session -t $session
-         else
-              echo "Session has been already attached."
-              tmux list-sessions
-         fi
-    else
-        echo "Create new tmux session."
-        tmux
-    fi
-fi
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
+GIT_PS1_SHOWDIRTYSTATE=true
 
 # cp
 alias cp="cp -i"
@@ -170,16 +153,13 @@ alias cp="cp -i"
 # mv
 alias mv="mv -i"
 
-# ps 
-alias ps="ps auxe"
-
 # ps1 custom
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;37m\]\n$(__git_ps1 "(%s) ")\[\033[36m\]\$ \[\033[01;00m\]'
 
-# android sdk
-export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/platform-tools"
-export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/tools"
-export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/apktool"
+export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib
+export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8
+export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8:/Users/sawai/lib/my-delcr
+export PATH=$PATH:/usr/local/lib/android-ndk-r9
 
-# grep
-# grep -R "string" .
+# apache alias
+alias apache2="sudo /usr/local/sbin/apachectl restart"
