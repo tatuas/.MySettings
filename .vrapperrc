@@ -1,0 +1,8 @@
+inoremap <C-h> <BS>
+inoremap <C-b> h
+inoremap <C-f> l
+inoremap <C-d> x
+inoremap <C-a> 0
+inoremap <C-e> $
+inoremap <C-p> k
+inoremap <C-n> j

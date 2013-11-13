@@ -1,0 +1,15 @@
+[user]
+name = Tatsuya Sawai
+email = a209050@gmail.com
+[core]
+editor = vim
+sparse-checkout = true
+[mergetool]
+mergetool = vimdiff
+[color]
+status = auto
+branch = auto
+interactive = auto
+diff = auto
+[help]
+autocorrect = 1
