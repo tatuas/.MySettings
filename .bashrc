@@ -183,4 +183,3 @@ export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/apktool"
 
 # add bash`s path to sudo 
 alias sudo="sudo env PATH=$PATH"
-
