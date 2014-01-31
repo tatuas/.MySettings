@@ -127,9 +127,6 @@ alias dropbox="python $HOME/.lib/dropbox.py"
 alias clip-c='xclip -i -selection clipboard'
 alias clip-p='xclip -o -selection clipboard'
 
-# add bash`s path to sudo 
-alias sudo="sudo env PATH=$PATH"
-
 # add ${gitcomp_filename}
 # . /usr/local/lib/git/${gitcomp_filename}
 gitcomp_filename="git-completion.bash"
@@ -183,3 +180,6 @@ export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/apktool"
 
 # grep
 # grep -R "string" .
+
+# add bash`s path to sudo 
+alias sudo="sudo env PATH=$PATH"
