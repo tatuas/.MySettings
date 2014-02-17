@@ -143,9 +143,37 @@ export PATH=${PATH}:"/usr/local/lib/android-sdk-macosx/tools"
 alias sudo="sudo env PATH=$PATH"
 
 # add ${gitcomp_filename}
-source /usr/local/etc/bash_completion.d/git-prompt.sh
-source /usr/local/etc/bash_completion.d/git-completion.bash
+# source /usr/local/etc/bash_completion.d/git-prompt.sh
+# source /usr/local/etc/bash_completion.d/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
+
+gitprompt_filename="git-prompt.sh"
+if [ -f ~/.lib/${gitprompt_filename} ]; then
+    if [ -x ~/.lib/${gitprompt_filename} ]; then
+        . ~/.lib/${gitprompt_filename}
+    else 
+        chmod +x ~/.lib/${gitprompt_filename}
+        . ~/.lib/${gitprompt_filename} 
+    fi
+else
+    wget 'https://raw2.github.com/git/git/master/contrib/completion/git-prompt.sh' -O ~/.lib/${gitprompt_filename}    
+    chmod +x ~/.lib/${gitprompt_filename}
+    . ${gitprompt_filename}
+fi
+
+gitcomp_filename="git-completion.bash"
+if [ -f ~/.lib/${gitcomp_filename} ]; then
+    if [ -x ~/.lib/${gitcomp_filename} ]; then
+        . ~/.lib/${gitcomp_filename}
+    else 
+        chmod +x ~/.lib/${gitcomp_filename}
+        . ~/.lib/${gitcomp_filename} 
+    fi
+else
+    wget 'http://git.kernel.org/cgit/git/git.git/plain/contrib/completion/git-completion.bash' -O ~/.lib/${gitcomp_filename}    
+    chmod +x ~/.lib/${gitcomp_filename}
+    . ${gitcomp_filename}
+fi
 
 # cp
 alias cp="cp -i"
@@ -156,10 +184,6 @@ alias mv="mv -i"
 # ps1 custom
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;37m\]\n$(__git_ps1 "(%s) ")\[\033[36m\]\$ \[\033[01;00m\]'
 
-export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib
-export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8
-export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8:/Users/sawai/lib/my-delcr
-export PATH=$PATH:/usr/local/lib/android-ndk-r9
+export PATH=${PATH}:"$HOME/.lib"
+export PATH=$PATH:"/usr/local/lib/android-ndk-r9"
 
-# apache alias
-alias apache2="sudo /usr/local/sbin/apachectl restart"
