@@ -13,3 +13,5 @@ sudo apt-get install xdg-user-dirs-gtk
 LANG=C xdg-user-dirs-gtk-update
 gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 sudo update-alternatives --config editor
+sudo add-apt-repository ppa:tualatrix/ppa
+sudo apt-get install ubuntu-tweak
