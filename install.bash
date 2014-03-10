@@ -14,5 +14,7 @@ LANG=C xdg-user-dirs-gtk-update
 gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 sudo update-alternatives --config editor
 sudo add-apt-repository ppa:tualatrix/ppa
+sudo add-apt-repository ppa:japaneseteam/ppa
 sudo apt-get update
 sudo apt-get install ubuntu-tweak
+sudo apt-get install ibus-mozc im-setup-helper
