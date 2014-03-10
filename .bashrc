@@ -178,8 +178,19 @@ export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/platform-tools"
 export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/tools"
 export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/apktool"
 
+# android ndk
+export NDK_PATH="$HOME/.lib/android-ndk-r9d"
+export PATH=${PATH}:$NDK_PATH
+
+# google app engine sdk python
+export PATH=${PATH}:"$HOME/.lib/gae/python/google_appengine"
+
 # grep
 # grep -R "string" .
 
 # add bash`s path to sudo 
 alias sudo="sudo env PATH=$PATH"
+
+# eclipse
+alias eclipse="${HOME}/.lib/eclipse/eclipse"
+alias aptana="${HOME}/.lib/aptana/AptanaStudio3"
