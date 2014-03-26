@@ -13,3 +13,5 @@ interactive = auto
 diff = auto
 [help]
 autocorrect = 1
+[diff]
+	external = /home/tatsuya-s/.lib/meld-diff.py

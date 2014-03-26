@@ -194,3 +194,5 @@ alias sudo="sudo env PATH=$PATH"
 # eclipse
 alias eclipse="${HOME}/.lib/eclipse/eclipse"
 alias aptana="${HOME}/.lib/aptana/AptanaStudio3"
+
+export PYTHONPATH=${PYTHONPATH}:"${HOME}/.lib/gae/python/google_appengine"
