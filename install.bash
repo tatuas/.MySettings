@@ -5,6 +5,7 @@ ln -s $HOME/.MySettings/.bashrc $HOME/.bashrc
 ln -s $HOME/.MySettings/.tmux.conf $HOME/.tmux.conf
 ln -s $HOME/.MySettings/.vrapperrc $HOME/.vrapperrc
 ln -s $HOME/.MySettings/.gitconfig $HOME/.gitconfig
+ln -s $HOME/.MySettings/meld-diff.py $HOME/meld-diff.py
 sudo apt-get install xclip
 sudo apt-get install tmux
 sudo apt-get install vim
@@ -18,3 +19,4 @@ sudo add-apt-repository ppa:japaneseteam/ppa
 sudo apt-get update
 sudo apt-get install ubuntu-tweak
 sudo apt-get install ibus-mozc im-setup-helper
+
