@@ -126,8 +126,8 @@ fi
 # export PIP RESPECT_VIRTUALENV=true
 
 # android-sdk path 
-export PATH=${PATH}:"/usr/local/lib/android-sdk-macosx/platform-tools"
-export PATH=${PATH}:"/usr/local/lib/android-sdk-macosx/tools"
+export PATH=${PATH}:"/Users/tatsuya-s/.lib/android-sdk-macosx/platform-tools"
+export PATH=${PATH}:"/Users/tatsuya-s/.lib/android-sdk-macosx/tools"
 
 # apktool path
 # export PATH=${PATH}:"$HOME/lib/apktool"
@@ -156,10 +156,12 @@ alias mv="mv -i"
 # ps1 custom
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;37m\]\n$(__git_ps1 "(%s) ")\[\033[36m\]\$ \[\033[01;00m\]'
 
-export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib
-export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8
-export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8:/Users/sawai/lib/my-delcr
-export PATH=$PATH:/usr/local/lib/android-ndk-r9
+#export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib
+#export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8
+#export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8:/Users/sawai/lib/my-delcr
+#export PATH=$PATH:/usr/local/lib/android-ndk-r9
+export PATH=$PATH:/usr/local/lib/eclipse
 
 # apache alias
 alias apache2="sudo /usr/local/sbin/apachectl restart"
+

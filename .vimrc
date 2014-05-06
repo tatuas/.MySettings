@@ -1,9 +1,9 @@
 syntax on
-set tabstop=4
-set softtabstop=4
+set tabstop=2
+set softtabstop=2
 set autoindent
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set number
 set smartindent
 set nowrap
@@ -14,8 +14,3 @@ set wrapscan
 set smartcase
 set ignorecase
 
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
