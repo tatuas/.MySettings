@@ -154,6 +154,7 @@ if ( ! test $TMUX ) && ( ! expr $TERM : "^screen" > /dev/null ) && which tmux > 
          else
               echo "Session has been already attached."
               tmux list-sessions
+              tmux attach-session -t 0
          fi
     else
         echo "Create new tmux session."
@@ -174,16 +175,16 @@ alias ps="ps auxe"
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;37m\]\n$(__git_ps1 "(%s) ")\[\033[36m\]\$ \[\033[01;00m\]'
 
 # android sdk
-export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/platform-tools"
-export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/tools"
-export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/apktool"
+export PATH=${PATH}:"/usr/local/lib/android-studio/sdk/tools"
+export PATH=${PATH}:"/usr/local/lib/android-studio/sdk/apktool"
+export PATH=${PATH}:"/usr/local/lib/android-studio/sdk/platform-tools"
 
 # android ndk
-export NDK_PATH="$HOME/.lib/android-ndk-r9d"
-export PATH=${PATH}:$NDK_PATH
+#export NDK_PATH="$HOME/.lib/android-ndk-r9d"
+#export PATH=${PATH}:$NDK_PATH
 
 # google app engine sdk python
-export PATH=${PATH}:"$HOME/.lib/gae/python/google_appengine"
+#export PATH=${PATH}:"$HOME/.lib/gae/python/google_appengine"
 
 # grep
 # grep -R "string" .
@@ -192,7 +193,8 @@ export PATH=${PATH}:"$HOME/.lib/gae/python/google_appengine"
 alias sudo="sudo env PATH=$PATH"
 
 # eclipse
-alias eclipse="${HOME}/.lib/eclipse/eclipse"
-alias aptana="${HOME}/.lib/aptana/AptanaStudio3"
+#alias eclipse="${HOME}/.lib/eclipse/eclipse"
+#alias aptana="${HOME}/.lib/aptana/AptanaStudio3"
 
-export PYTHONPATH=${PYTHONPATH}:"${HOME}/.lib/gae/python/google_appengine"
+#export PYTHONPATH=${PYTHONPATH}:"${HOME}/.lib/gae/python/google_appengine"
+

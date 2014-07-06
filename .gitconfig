@@ -14,4 +14,12 @@ diff = auto
 [help]
 autocorrect = 1
 [diff]
-	external = /home/tatsuya-s/.lib/meld-diff.py
+external = /home/tatsuya-s/.lib/meld-diff.py
+[alias]
+co = checkout
+cmt = commit
+st = status
+ada = add -A
+reh = reset --hard HEAD
+po = push origin
+

@@ -5,7 +5,8 @@ ln -s $HOME/.MySettings/.bashrc $HOME/.bashrc
 ln -s $HOME/.MySettings/.tmux.conf $HOME/.tmux.conf
 ln -s $HOME/.MySettings/.vrapperrc $HOME/.vrapperrc
 ln -s $HOME/.MySettings/.gitconfig $HOME/.gitconfig
-ln -s $HOME/.MySettings/meld-diff.py $HOME/meld-diff.py
+ln -s $HOME/.MySettings/meld-diff.py $HOME/.lib/meld-diff.py
+sudo apt-get install meld
 sudo apt-get install xclip
 sudo apt-get install tmux
 sudo apt-get install vim
