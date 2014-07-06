@@ -118,14 +118,14 @@ fi
 export PATH=${PATH}:"$HOME/.lib/";
 
 # dropbox
-alias dropbox="python $HOME/.lib/dropbox.py"
+#alias dropbox="python $HOME/.lib/dropbox.py"
 
 # xclip alias
 # how to use it 
 # ex) $ clip-c < ~/.ssh/id_rsa.pub
 # ex) echo 'test' | clip-c
-alias clip-c='xclip -i -selection clipboard'
-alias clip-p='xclip -o -selection clipboard'
+#alias clip-c='xclip -i -selection clipboard'
+#alias clip-p='xclip -o -selection clipboard'
 
 # add bash`s path to sudo 
 alias sudo="sudo env PATH=$PATH"
@@ -157,6 +157,7 @@ if ( ! test $TMUX ) && ( ! expr $TERM : "^screen" > /dev/null ) && which tmux > 
          else
               echo "Session has been already attached."
               tmux list-sessions
+              tmux attach-session -t 0
          fi
     else
         echo "Create new tmux session."
@@ -177,9 +178,9 @@ alias ps="ps auxe"
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;37m\]\n$(__git_ps1 "(%s) ")\[\033[36m\]\$ \[\033[01;00m\]'
 
 # android sdk
-export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/platform-tools"
-export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/tools"
-export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/apktool"
+#export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/platform-tools"
+#export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/tools"
+#export PATH=${PATH}:"$HOME/.lib/android-sdk-linux/apktool"
 
 # grep
 # grep -R "string" .
