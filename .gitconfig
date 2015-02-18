@@ -18,8 +18,11 @@ external = /home/tatsuya-s/.lib/meld-diff.py
 [alias]
 co = checkout
 cmt = commit
+com = checkout master
 st = status
 ada = add -A
 reh = reset --hard HEAD
 po = push origin
+pom = push origin master
+pl = pull
 

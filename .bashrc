@@ -175,16 +175,24 @@ alias ps="ps auxe"
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;37m\]\n$(__git_ps1 "(%s) ")\[\033[36m\]\$ \[\033[01;00m\]'
 
 # android sdk
-export PATH=${PATH}:"/usr/local/lib/android-studio/sdk/tools"
-export PATH=${PATH}:"/usr/local/lib/android-studio/sdk/apktool"
-export PATH=${PATH}:"/usr/local/lib/android-studio/sdk/platform-tools"
+export PATH=${PATH}:"/usr/local/lib/android-sdk/tools"
+export PATH=${PATH}:"/usr/local/lib/android-sdk/apktool"
+export PATH=${PATH}:"/usr/local/lib/android-sdk/platform-tools"
 
 # android ndk
 #export NDK_PATH="$HOME/.lib/android-ndk-r9d"
 #export PATH=${PATH}:$NDK_PATH
 
+# Python Virtual-Env-Wrapper
+#source /usr/local/bin/virtualenvwrapper.sh
+#WORKON_HOME="$HOME/.virtualenvs"
+#export PIP_RESPECT_VIRTUALENV=true
+
 # google app engine sdk python
-#export PATH=${PATH}:"$HOME/.lib/gae/python/google_appengine"
+#export PATH=${PATH}:"$HOME/.lib/google_appengine"
+
+# go
+export PATH=${PATH}:"$HOME/go-lang/bin"
 
 # grep
 # grep -R "string" .
@@ -192,9 +200,12 @@ export PATH=${PATH}:"/usr/local/lib/android-studio/sdk/platform-tools"
 # add bash`s path to sudo 
 alias sudo="sudo env PATH=$PATH"
 
+alias sudo="sudo env PATH=$PATH"
+
 # eclipse
 #alias eclipse="${HOME}/.lib/eclipse/eclipse"
 #alias aptana="${HOME}/.lib/aptana/AptanaStudio3"
 
 #export PYTHONPATH=${PYTHONPATH}:"${HOME}/.lib/gae/python/google_appengine"
+
 
