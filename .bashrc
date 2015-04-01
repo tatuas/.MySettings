@@ -1,7 +1,7 @@
 # home path
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+#export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-export PATH=${PATH}:"$HOME/bin":"$HOME/lib":
+export PATH=${PATH}:"$HOME/bin":
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -126,8 +126,8 @@ fi
 # export PIP RESPECT_VIRTUALENV=true
 
 # android-sdk path 
-export PATH=${PATH}:"/Users/tatsuya-s/.lib/android-sdk-macosx/platform-tools"
-export PATH=${PATH}:"/Users/tatsuya-s/.lib/android-sdk-macosx/tools"
+export PATH=${PATH}:"$HOME/.lib/android-sdk-macosx/platform-tools"
+export PATH=${PATH}:"$HOME/.lib/android-sdk-macosx/tools"
 
 # apktool path
 # export PATH=${PATH}:"$HOME/lib/apktool"
@@ -195,5 +195,5 @@ alias apache2="sudo /usr/local/sbin/apachectl restart"
 
 =======
 export PATH=${PATH}:"$HOME/.lib"
-export PATH=$PATH:"/usr/local/lib/android-ndk-r9"
+#export PATH=$PATH:"/usr/local/lib/android-ndk-r9"
 
