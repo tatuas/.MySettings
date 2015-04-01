@@ -143,8 +143,8 @@ export PATH=${PATH}:"$HOME/.lib/android-sdk-macosx/tools"
 alias sudo="sudo env PATH=$PATH"
 
 # add ${gitcomp_filename}
-# source /usr/local/etc/bash_completion.d/git-prompt.sh
-# source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 
 gitprompt_filename="git-prompt.sh"
