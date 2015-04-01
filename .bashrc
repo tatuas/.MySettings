@@ -2,6 +2,7 @@
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH=${PATH}:"$HOME/bin":
+export PATH=${PATH}:"$HOME/.lib"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -140,12 +141,15 @@ export PATH=${PATH}:"$HOME/.lib/android-sdk-macosx/tools"
 # alias clip-p='xclip -o -selection clipboard'
 
 # add bash`s path to sudo 
-alias sudo="sudo env PATH=$PATH"
+#alias sudo="sudo env PATH=$PATH"
 
 # add ${gitcomp_filename}
 source /usr/local/etc/bash_completion.d/git-prompt.sh
-source /usr/local/etc/bash_completion.d/git-completion.bash
+# source /usr/local/etc/bash_completion.d/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
+
+if false
+then
 
 gitprompt_filename="git-prompt.sh"
 if [ -f ~/.lib/${gitprompt_filename} ]; then
@@ -175,6 +179,8 @@ else
     . ${gitcomp_filename}
 fi
 
+fi
+
 # cp
 alias cp="cp -i"
 
@@ -188,12 +194,11 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[0
 #export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8
 #export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8:/Users/sawai/lib/my-delcr
 #export PATH=$PATH:/usr/local/lib/android-ndk-r9
-export PATH=$PATH:/usr/local/lib/eclipse
+#export PATH=$PATH:/usr/local/lib/eclipse
 
-# apache alias
-alias apache2="sudo /usr/local/sbin/apachectl restart"
+# alias apache
+#alias apache2="sudo /usr/local/sbin/apachectl restart"
 
-=======
-export PATH=${PATH}:"$HOME/.lib"
+# set android ndk path
 #export PATH=$PATH:"/usr/local/lib/android-ndk-r9"
 
