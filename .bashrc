@@ -158,3 +158,9 @@ source '/Users/tatsuya-s/google-cloud-sdk/path.bash.inc'
 # The next line enables bash completion for gcloud.
 source '/Users/tatsuya-s/google-cloud-sdk/completion.bash.inc'
 
+# Current Timestamp
+alias nowts='date +%s'
+
+# Simple json formatter
+alias formatjson='jq .'
+
