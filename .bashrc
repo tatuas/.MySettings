@@ -162,5 +162,5 @@ source '/Users/tatsuya-s/google-cloud-sdk/completion.bash.inc'
 alias nowts='date +%s'
 
 # Simple json formatter
-alias formatjson='jq .'
+alias jsonfmt='jq .'
 
