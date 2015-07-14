@@ -1,25 +1,35 @@
 [user]
-name = Tatsuya Sawai
-email = a209050@gmail.com
+  name = Tatsuya Sawai
+  email = a209050@gmail.com
 [core]
-editor = vim
-sparse-checkout = true
+  editor = vim
+  sparse-checkout = true
 [mergetool]
-mergetool = vimdiff
+  mergetool = vimdiff
 [color]
-status = auto
-branch = auto
-interactive = auto
-diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  diff = auto
 [help]
-autocorrect = 1
+  autocorrect = 1
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[diff]
+external = /Users/tatsuya-s/.MySettings/meld-diff.py
 [alias]
   co = checkout
   st = status
   ada = add -A
   reh = reset --hard HEAD
+  pso = push origin
+  plo = pull origin
+  psom = push origin master
+  plom = pull origin master
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

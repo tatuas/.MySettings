@@ -121,65 +121,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# about pip init
-# WORKON_HOME=~/.virtualenvs
-# source /usr/local/bin/virtualenvwrapper.sh
-# export PIP RESPECT_VIRTUALENV=true
-
 # android-sdk path 
-export PATH=${PATH}:"$HOME/.lib/android-sdk-macosx/platform-tools"
-export PATH=${PATH}:"$HOME/.lib/android-sdk-macosx/tools"
-
-# apktool path
-# export PATH=${PATH}:"$HOME/lib/apktool"
-# xclip alias
-# how to use it 
-# ex) $ clip-c < ~/.ssh/id_rsa.pub
-# ex) echo 'test' | clip-c
-# ex) cat test.txt | clip-c
-# alias clip-c='xclip -i -selection clipboard'
-# alias clip-p='xclip -o -selection clipboard'
+export PATH=${PATH}:"$HOME/Library/Android/sdk/platform-tools"
+export PATH=${PATH}:"$HOME/Library/Android/sdk/platforms"
 
 # add bash`s path to sudo 
-#alias sudo="sudo env PATH=$PATH"
+# alias sudo="sudo env PATH=$PATH"
 
-# add ${gitcomp_filename}
+# git branch name 
 source /usr/local/etc/bash_completion.d/git-prompt.sh
-# source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
-
-if false
-then
-
-gitprompt_filename="git-prompt.sh"
-if [ -f ~/.lib/${gitprompt_filename} ]; then
-    if [ -x ~/.lib/${gitprompt_filename} ]; then
-        . ~/.lib/${gitprompt_filename}
-    else 
-        chmod +x ~/.lib/${gitprompt_filename}
-        . ~/.lib/${gitprompt_filename} 
-    fi
-else
-    wget 'https://raw2.github.com/git/git/master/contrib/completion/git-prompt.sh' -O ~/.lib/${gitprompt_filename}    
-    chmod +x ~/.lib/${gitprompt_filename}
-    . ${gitprompt_filename}
-fi
-
-gitcomp_filename="git-completion.bash"
-if [ -f ~/.lib/${gitcomp_filename} ]; then
-    if [ -x ~/.lib/${gitcomp_filename} ]; then
-        . ~/.lib/${gitcomp_filename}
-    else 
-        chmod +x ~/.lib/${gitcomp_filename}
-        . ~/.lib/${gitcomp_filename} 
-    fi
-else
-    wget 'http://git.kernel.org/cgit/git/git.git/plain/contrib/completion/git-completion.bash' -O ~/.lib/${gitcomp_filename}    
-    chmod +x ~/.lib/${gitcomp_filename}
-    . ${gitcomp_filename}
-fi
-
-fi
 
 # cp
 alias cp="cp -i"
@@ -196,9 +148,13 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[0
 #export PATH=$PATH:/usr/local/lib/android-ndk-r9
 #export PATH=$PATH:/usr/local/lib/eclipse
 
-# alias apache
-#alias apache2="sudo /usr/local/sbin/apachectl restart"
+# Java version
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
-# set android ndk path
-#export PATH=$PATH:"/usr/local/lib/android-ndk-r9"
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/tatsuya-s/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+source '/Users/tatsuya-s/google-cloud-sdk/completion.bash.inc'
 
