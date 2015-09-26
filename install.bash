@@ -21,4 +21,10 @@ sudo apt-get install ibus-mozc im-setup-helper
 sudo apt-get install mercurial
 sudo apt-get install sqlitebrowser
 sudo apt-get install exfat-fuse exfat-utils
+sudo apt-get install curl
+
+sudo apt-get install python-support
+sudo apt-get install python-distutils-extra
+wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
+sudo easy_install pip
 
