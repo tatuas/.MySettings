@@ -216,3 +216,6 @@ source '/home/tatsuya-s/google-cloud-sdk/completion.bash.inc'
 
 # Change ctrl key to caps lock
 setxkbmap -option ctrl:swapcaps
+
+# resolve name of 'nix'
+. /home/tatsuya-s/.nix-profile/etc/profile.d/nix.sh

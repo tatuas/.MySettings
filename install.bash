@@ -29,4 +29,7 @@ wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
 sudo easy_install pip
 
 sudo apt-get install lib32z1 lib32ncurses5-dev lib32stdc++6
+sudo apt-get install virtualenv
 
+curl https://nixos.org/nix/install | sh
+source ~/.bashrc
