@@ -209,10 +209,10 @@ alias sudo="sudo env PATH=$PATH"
 #export PYTHONPATH=${PYTHONPATH}:"${HOME}/.lib/gae/python/google_appengine"
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/home/tatsuya-s/google-cloud-sdk/path.bash.inc'
+# source '/home/tatsuya-s/google-cloud-sdk/path.bash.inc'
 
 # The next line enables bash completion for gcloud.
-source '/home/tatsuya-s/google-cloud-sdk/completion.bash.inc'
+# source '/home/tatsuya-s/google-cloud-sdk/completion.bash.inc'
 
 # Change ctrl key to caps lock
 setxkbmap -option ctrl:swapcaps

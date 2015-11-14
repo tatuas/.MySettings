@@ -22,14 +22,17 @@ sudo apt-get install mercurial
 sudo apt-get install sqlitebrowser
 sudo apt-get install exfat-fuse exfat-utils
 sudo apt-get install curl
+sudo apt-get install lib32z1 lib32ncurses5-dev lib32stdc++6
+sudo apt-get install xsel
 
 sudo apt-get install python-support
 sudo apt-get install python-distutils-extra
 wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
 sudo easy_install pip
-
-sudo apt-get install lib32z1 lib32ncurses5-dev lib32stdc++6
-sudo apt-get install virtualenv
-
 curl https://nixos.org/nix/install | sh
+
 source ~/.bashrc
+
+sudo pip install virtualenv
+nix-env -i direnv
+
