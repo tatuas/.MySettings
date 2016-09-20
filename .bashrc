@@ -123,6 +123,7 @@ fi
 
 # android-sdk path 
 export PATH=${PATH}:"$HOME/Library/Android/sdk/platform-tools"
+export PATH=${PATH}:"$HOME/Library/Android/sdk/tools"
 export PATH=${PATH}:"$HOME/Library/Android/sdk/platforms"
 
 # add bash`s path to sudo 
@@ -153,14 +154,16 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 # export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/tatsuya-s/google-cloud-sdk/path.bash.inc'
+# source '/Users/tatsuya-s/google-cloud-sdk/path.bash.inc'
 
 # The next line enables bash completion for gcloud.
-source '/Users/tatsuya-s/google-cloud-sdk/completion.bash.inc'
+# source '/Users/tatsuya-s/google-cloud-sdk/completion.bash.inc'
 
 # Current Timestamp
 alias nowts='date +%s'
 
 # Simple json formatter
-alias jsonfmt='jq .'
+alias jsonfmt='pbpaste | jq . | pbcopy'
 
+# Export Python Path
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH

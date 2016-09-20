@@ -33,3 +33,5 @@ external = /Users/tatsuya-s/.MySettings/meld-diff.py
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[credential]
+	helper = osxkeychain
