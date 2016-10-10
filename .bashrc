@@ -139,15 +139,13 @@ export PATH=${PATH}:"${ANDROID_SDK_BASE}//platforms"
 source ${HOMEBREW_ETC_PATH}/bash_completion.d/git-prompt.sh
 source ${HOMEBREW_ETC_PATH}/bash_completion.d/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;37m\]\n$(__git_ps1 "(%s) ")\[\033[36m\]\$ \[\033[01;00m\]'
 
 # cp
 alias cp="cp -i"
 
 # mv
 alias mv="mv -i"
-
-# ps1 custom
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;37m\]\n$(__git_ps1 "(%s) ")\[\033[36m\]\$ \[\033[01;00m\]'
 
 # Current Timestamp
 alias nowts='date +%s'
