@@ -1,6 +1,6 @@
 # home path
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH=${PATH}:"$HOME/bin":
 export PATH=${PATH}:"$HOME/.lib"
 
@@ -173,3 +173,6 @@ alias jsonfmt='pbpaste | jq . | pbcopy'
 
 # Export Python Path
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+# Homebrew
+export HOMEBREW_CACHE=/opt/homebrew/cache
