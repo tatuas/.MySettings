@@ -1,6 +1,11 @@
+# Homebrew path
+HOMEBREW_BASE_PATH=/opt/homebrew
+HOMEBREW_BIN_PATH=${HOMEBREW_BASE_PATH}/bin
+HOMEBREW_ETC_PATH=${HOMEBREW_BASE_PATH}/etc
+
 # home path
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH="${HOMEBREW_BIN_PATH}:${PATH}"
 export PATH=${PATH}:"$HOME/bin":
 export PATH=${PATH}:"$HOME/.lib"
 
@@ -122,16 +127,17 @@ if ! shopt -oq posix; then
 fi
 
 # android-sdk path 
-export PATH=${PATH}:"$HOME/Library/Android/sdk/platform-tools"
-export PATH=${PATH}:"$HOME/Library/Android/sdk/tools"
-export PATH=${PATH}:"$HOME/Library/Android/sdk/platforms"
+ANDROID_SDK_BASE=${HOME}/Library/Android/sdk
+export PATH=${PATH}:"${ANDROID_SDK_BASE}/platform-tools"
+export PATH=${PATH}:"${ANDROID_SDK_BASE}/tools"
+export PATH=${PATH}:"${ANDROID_SDK_BASE}//platforms"
 
 # add bash`s path to sudo 
 # alias sudo="sudo env PATH=$PATH"
 
 # git branch name 
-source /usr/local/etc/bash_completion.d/git-prompt.sh
-source /usr/local/etc/bash_completion.d/git-completion.bash
+source ${HOMEBREW_ETC_PATH}/bash_completion.d/git-prompt.sh
+source ${HOMEBREW_ETC_PATH}/bash_completion.d/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 
 # cp
@@ -143,36 +149,12 @@ alias mv="mv -i"
 # ps1 custom
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;37m\]\n$(__git_ps1 "(%s) ")\[\033[36m\]\$ \[\033[01;00m\]'
 
-#export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib
-#export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8
-#export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sawai/bin:/Users/sawai/lib::/usr/local/lib/android-sdk-macosx/platform-tools:/usr/local/lib/android-sdk-macosx/tools:/Users/sawai/lib/to-utf8:/Users/sawai/lib/my-delcr
-#export PATH=$PATH:/usr/local/lib/android-ndk-r9
-#export PATH=$PATH:/usr/local/lib/eclipse
-
-# Java version
-# export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
-# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-
-# The next line updates PATH for the Google Cloud SDK.
-
-# source '/Users/tatsuya-s/google-cloud-sdk/path.bash.inc'
-
-# The next line enables bash completion for gcloud.
-# source '/Users/tatsuya-s/google-cloud-sdk/completion.bash.inc'
-
-# source '/Users/tatsuya-s/google-cloud-sdk/path.bash.inc'
-
-# The next line enables bash completion for gcloud.
-# source '/Users/tatsuya-s/google-cloud-sdk/completion.bash.inc'
-
 # Current Timestamp
 alias nowts='date +%s'
 
-# Simple json formatter
+# Simple Json Formatter
 alias jsonfmt='pbpaste | jq . | pbcopy'
 
-# Export Python Path
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+# Export homebrew Path
+export HOMEBREW_CACHE=${HOMEBREW_BASE_PATH}/cache
 
-# Homebrew
-export HOMEBREW_CACHE=/opt/homebrew/cache
