@@ -8,6 +8,7 @@ HOMEBREW_ETC_PATH=${HOMEBREW_BASE_PATH}/etc
 export PATH="${HOMEBREW_BIN_PATH}:${PATH}"
 export PATH=${PATH}:"$HOME/bin":
 export PATH=${PATH}:"$HOME/.lib"
+export PATH=${PATH}:"$HOME/Library/google-cloud-sdk/bin"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
