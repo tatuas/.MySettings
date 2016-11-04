@@ -19,7 +19,7 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [diff]
-external = /Users/timers-tatuas/.MySettings/meld-diff.py
+external = ~/.MySettings/meld-diff.py
 [alias]
   co = checkout
   st = status
