@@ -1,11 +1,5 @@
-# Homebrew path
-HOMEBREW_BASE_PATH=/opt/homebrew
-HOMEBREW_BIN_PATH=${HOMEBREW_BASE_PATH}/bin
-HOMEBREW_ETC_PATH=${HOMEBREW_BASE_PATH}/etc
-
 # home path
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-export PATH="${HOMEBREW_BIN_PATH}:${PATH}"
 export PATH=${PATH}:"$HOME/bin":
 export PATH=${PATH}:"$HOME/.lib"
 export PATH=${PATH}:"$HOME/Library/google-cloud-sdk/bin"
@@ -75,8 +69,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -133,9 +125,6 @@ export PATH=${PATH}:"${ANDROID_SDK_BASE}/platform-tools"
 export PATH=${PATH}:"${ANDROID_SDK_BASE}/tools"
 export PATH=${PATH}:"${ANDROID_SDK_BASE}//platforms"
 
-# add bash`s path to sudo 
-# alias sudo="sudo env PATH=$PATH"
-
 # git branch name 
 source ${HOMEBREW_ETC_PATH}/bash_completion.d/git-prompt.sh
 source ${HOMEBREW_ETC_PATH}/bash_completion.d/git-completion.bash
@@ -153,7 +142,4 @@ alias nowts='date +%s'
 
 # Simple Json Formatter
 alias jsonfmt='pbpaste | jq . | pbcopy'
-
-# Export homebrew Path
-export HOMEBREW_CACHE=${HOMEBREW_BASE_PATH}/cache
 
