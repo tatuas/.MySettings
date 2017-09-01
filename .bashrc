@@ -1,3 +1,6 @@
+# Homebrew path
+export HOMEBREW_ETC_PATH="/usr/local/etc"
+
 # home path
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH=${PATH}:"$HOME/bin":
